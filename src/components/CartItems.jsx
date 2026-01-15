@@ -28,9 +28,9 @@ const CartItems = () => {
                                     <img src={e.image} alt="prdctImg" height={55} width={55} className='rounded-lg ring-1 ring-slate-900/5 m-3 p-1'/>
                                 </td>
                                 <td><div className='line-clamp-3'>{e.name}</div></td>
-                                <td>${e.new_price}</td>
+                                <td>₹{e.new_price}</td>
                                 <td className='w-16 h-16 bg-white'>{cartItems[e.id]}</td>
-                                <td>${e.new_price * cartItems[e.id]}</td>
+                                <td>₹{e.new_price * cartItems[e.id]}</td>
                                 <td><div className='bold-22 relative left-1/2'><TbTrash onClick={()=> {removeFromCart(e.id)}} /></div></td>             
                             </tr>
                         }
@@ -45,7 +45,7 @@ const CartItems = () => {
                     <div>
                         <div className='flexBetween py-4'>
                             <h4 className='medium-16'>Subtotal:</h4>
-                            <h4 className='text-gray-30 font-semibold'>${getTotalCartAmount()}</h4>
+                            <h4 className='text-gray-30 font-semibold'>₹{getTotalCartAmount()}</h4>
                         </div>
                         <hr />
                         <div className='flexBetween py-4'>
@@ -55,7 +55,7 @@ const CartItems = () => {
                         <hr />
                         <div className='flexBetween py-4'>
                             <h4 className='medium-18'>Total:</h4>
-                            <h4 className='bold-18'>${getTotalCartAmount()}</h4>
+                            <h4 className='bold-18'>₹{getTotalCartAmount()}</h4>
                         </div>
                     </div>
                     <button className='btn-dark w-44 rounded-xl'>Checkout</button>
